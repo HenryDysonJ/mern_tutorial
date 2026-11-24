@@ -3,11 +3,14 @@ import { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
 import { useDispatch, useSelector } from 'react-redux';
-import { getAllGoal, createdGoal, updateGoal } from '../feature/goal/goalSlice'
+import { getAllGoal, createdGoal, updateGoal } from '../feature/goal/goalSlice';
+import { logout } from '../feature/auth/authSlice'
 import { toast } from 'react-toastify';
+import { useNavigate } from "react-router-dom";
 
 const TodoForm = () => {
     const dispatch = useDispatch();
+    const navigate = useNavigate()
     const { formData, isLoading } = useSelector((state) => state.goal)
     const [todoDetails, setTodoDetails] = useState({
         customerName: '',
@@ -23,6 +26,11 @@ const TodoForm = () => {
             [key]: value
         }));
     };
+
+    const handleLogOut =()=>{
+        dispatch(logout());
+        navigate('/login')
+    }
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -54,9 +62,13 @@ const TodoForm = () => {
 
     return (
         <div className="form-containerl">
-            <h1 className="form-header text-red-50">
-                Store Details
-            </h1>
+            <div className='title-log'>
+                <h1 className="form-header text-red-50">
+                    Store Details
+                </h1>
+                <Button onClick={handleLogOut} variant='outline-danger' className='forgot'>Log Out</Button>
+            </div>
+
 
             <Form className="form-body" onSubmit={handleSubmit}>
                 <Form.Group className="mb-3">

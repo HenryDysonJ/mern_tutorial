@@ -9,7 +9,7 @@ function Dashboard() {
   
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem('user'));
-    if ( user && !user?.token) {
+    if (!user?.token) {
       navigate('/login')
     }
   }, [navigate])

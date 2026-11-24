@@ -8,14 +8,13 @@
   width: 100%;
   min-height: 100vh;
   background-color: #FFD1B0;
-
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .card-container {
-  width: 65%;
+  width: 70%;
   min-height: 400px;
   display: flex;
   align-items: center;
@@ -27,7 +26,7 @@
 }
 
 .card-form {
-  width: 450px;
+  width: 750px;
   padding: 35px;
   background-color: rgba(255, 255, 255, 0.45);
   border-radius: 20px;
@@ -95,6 +94,12 @@
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+}
+
+.title-log {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .card-panel {
