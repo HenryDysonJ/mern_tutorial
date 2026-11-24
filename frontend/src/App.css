@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.register-container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #FFD1B0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-container {
+  width: 65%;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 10px;
+  padding: 40px;
+  border-radius: 24px;
+  background-color: #FEDDC6;
+}
+
+.card-form {
+  width: 450px;
+  padding: 35px;
+  background-color: rgba(255, 255, 255, 0.45);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.card-form input {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+}
+
+.card-form button {
+  padding: 12px;
+  background-color: #f4511e;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.card-img {
+  width: 450px;
+  height: 400px;
+  background-image: url("./assets/login-img.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.forgot{
+    text-align: end;
+    color: #AE4700;
+    font-weight: 400;
+}
+
+.continue{
+    text-align: center;
+}
+
+.img-log{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+  .card-container {
+    flex-direction: column;
+    width: 95%;
+  }
+
+  .card-form {
+    width: 100%;
+  }
+
+  .card-img {
+    width: 100%;
+  }
+}
