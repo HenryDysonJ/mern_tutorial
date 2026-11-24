@@ -110,5 +110,5 @@ export const authSlice = createSlice({
      }
 })
 
-export const { reset } = authSlice.actions
+export const { reset, logout } = authSlice.actions
 export default authSlice.reducer;

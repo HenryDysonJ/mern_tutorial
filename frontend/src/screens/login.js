@@ -87,7 +87,7 @@ const Login = () => {
             <img src={Fb} className="" alt="facebook" />
           </div>
 
-          <p className="continue">Don't have an account? Register for free</p>
+          <p className="continue">Don't have an account? <a href='/register'> Register for free</a></p>
         </div>
 
         {/* Image */}
