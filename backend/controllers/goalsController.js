@@ -39,12 +39,13 @@ const getGoalsById = errorHandler(async (req, res) => {
 // @route  POST api/goals
 // @access Private
 const createGoals = errorHandler(async (req, res) => {
-    if (!req.body || !req.body.text) {
+    if (!req.body || !req.body.text || !req.body.feedback) {
         res.status(400);
-        throw new Error("Please add text");
+        throw new Error("Please add all feild");
     }
     const newGoal = await Goal.create({
         text: req.body.text,
+        feedback: req.body.feedback,
         user: req.user.id
     });
 
@@ -59,7 +60,7 @@ const createGoals = errorHandler(async (req, res) => {
 // @access Private
 const updateGoals = errorHandler(async (req, res) => {
     const id = req.params.id;
-    const { text } = req.body;
+    const { text, feedback } = req.body;
     
     const getById = await Goal.findById(req.params.id);
     if (!getById) {
@@ -73,7 +74,7 @@ const updateGoals = errorHandler(async (req, res) => {
     }
 
     const update = await Goal.findByIdAndUpdate(
-        id, { text: text }, { new: true }
+        id, { text: text , feedback: feedback}, { new: true }
     );
 
     res.status(200).json({

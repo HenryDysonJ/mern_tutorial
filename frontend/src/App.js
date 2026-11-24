@@ -1,7 +1,7 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Dashboard from './screens/dashboard';
 import Register from './screens/register';
 import Login from './screens/login';

@@ -5,6 +5,10 @@ const goalSchema = mongoose.Schema({
         type: String,
         required: [true, "Please enter text"]
     },
+    feedback: {
+        type: String,
+        required: [true, "Please enter feedback"]
+    },
     user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "User",
