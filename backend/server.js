@@ -9,10 +9,15 @@ const cors = require("cors");
 const port = process.env.PORT || 3000;
 
 const app = express();
+const allowedOrigins = [
+    'http://localhost:3000',
+    'https://mern-tutorial-rho.vercel.app',
+    process.env.CLIENT_ORIGIN
+].filter(Boolean);
 
 app.use(express.json());
 app.use(cors({
-    origin:['http://localhost:3000','https://mern-tutorial-server-3yug.onrender.com/api/user'],
+    origin: allowedOrigins,
     credentials: true
 }));
 
