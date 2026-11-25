@@ -78,7 +78,7 @@ const updateGoals = errorHandler(async (req, res) => {
     );
 
     res.status(200).json({
-        message: `Update data successfuly ${req.params.id}`,
+        message: `${getById.text} Update data successfuly`,
         data: update
     })
 })
@@ -100,7 +100,7 @@ const deleteGoals = errorHandler(async (req, res) => {
 
     const deletes = await Goal.findByIdAndDelete(req.params.id)
     res.status(200).json({
-        message: `Delete data successfuly ${req.params.id}`,
+        message: ` ${getById.text} Deleted successfuly`,
         data: deletes
     })
 })
