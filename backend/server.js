@@ -1,5 +1,5 @@
 const express = require("express");
-const dotenv = require('dotenv').config({ path:"./.env"});
+const dotenv = require('dotenv').config({ path: "./.env" });
 const goalsRouter = require('./routes/goalsRouter');
 const userRouter = require('./routes/userRoutes');
 const { errorHandler } = require("./middlewares/errorMiddleware");
@@ -11,8 +11,7 @@ const port = process.env.PORT || 3000;
 const app = express();
 const allowedOrigins = [
     'http://localhost:3000',
-    'https://mern-tutorial-rho.vercel.app',
-    process.env.CLIENT_ORIGIN
+    'https://mern-tutorial-one.vercel.app',
 ].filter(Boolean);
 
 app.use(express.json());
